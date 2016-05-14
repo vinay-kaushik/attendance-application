@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="assets/demo.css">
+	<link rel="stylesheet" href="assets/form-basic.css">
+
+</head>
+
+    <ul>
+        <li><a href="adminhomepage.html">Add Staff</a></li>
+        <li><a href="addonestudent.html">Add a Student</a></li>
+        <li><a href="addclassstudents.html">Add class of Students</a></li>
+        <li><a href="" class="active">Update Student</a></li>
+                <a href="AdminLogoutServlet" style="float: right;"> Logout </a>
+    </ul>
+
+
+    <div class="main-content">
+
+
+        <form class="form-basic" method="post" action="UpdateStudent">
+
+            <div class="form-title-row">
+                <h1>Update Student Details</h1>
+            </div>
+
+            <div class="form-row">
+                <label>
+                    <span>Full name</span>
+                    <input type="text" name="name">
+                </label>
+            </div>
+
+            <div class="form-row">
+                <label>
+                    <span>Roll Number</span>
+                    <input type="text" name="rollnumber">
+                </label>
+            </div>
+			
+			
+			<div class="form-row">
+                <label>
+                    <span>Branch</span>
+                    <select id="branchid" name="branch">
+                    </select>
+                </label>
+            </div>
+
+            <div class="form-row">
+				
+				<label>
+                    <span>Year</span>
+                    <select id="yearid" name="year">
+                    </select>
+                </label>
+
+            </div>
+
+            <div class="form-row">
+                <label>
+                    <span>Username</span>
+                    <input type="text" name="username">
+                </label>
+            </div>
+
+            <div class="form-row">
+                <label>
+                    <span>Password</span>
+                    <input type="password" name="password" value="password">
+                </label>
+            </div>
+			
+
+            <div class="form-row">
+                <input type="submit" value="Update Student"/>
+            </div>
+
+        </form>
+
+    </div>
+
+</body>
+<script>
+	var str="";
+	var branchop=["cse1","cse2","cse3","ece1","ece2","ece3","eee1","eee2"];
+	for(var i=0;i<branchop.length;i++)
+		str+="<option>"+branchop[i]+"</option><br>";
+	document.getElementById("branchid").innerHTML=str;
+	var yearop=[1,2,3,4];
+	str="";
+	for(var i=0;i<yearop.length;i++)
+		str+="<option>"+yearop[i]+"</option><br>";
+	document.getElementById("yearid").innerHTML=str;
+	
+	/*function showAttendance()
+	{
+		if(document.getElementById("todayid").checked == false)
+		{
+			str="Date for which attendance to be marked : <input type='date' name='date' placeholder='yyyy-mm-dd' >";
+			document.getElementById("showdate").innerHTML=str;
+		}	
+		else
+		{
+			str="";
+			document.getElementById("showdate").innerHTML=str;		
+		}
+	}*/
+</script>
+
+</html>

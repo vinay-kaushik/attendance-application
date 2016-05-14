@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset='utf-8'>
+	<meta http-equiv='X-UA-Compatible' content='IE=edge'>
+	<meta name='viewport' content='width=device-width, initial-scale=1'>
+	<link rel='stylesheet' href='assets/demo.css'>
+	<link rel='stylesheet' href='assets/form-basic.css'>
+
+</head>
+
+    <ul>
+        <li>
+    <a href='' style='background-color: inherit'></a>
+    </li>
+    
+        <a href='LogoutServlet' style='float: right;'> Logout </a>
+        <a  href='javascript:;' style='float: right;' onclick='changepassword()' id='changetext'>Change Password</a>
+        <a href='stafflogin.html'  style='float: left;'>Back</a>
+    </ul>
+
+
+    <div class='main-content'>
+
+
+        <form class='form-basic' method='post' action='UpdateStaff'>
+
+            <div class='form-title-row'>
+                <h1>Update Staff Details</h1>
+            </div>
+
+            <div class='form-row'>
+                <label>
+                    <span>ID</span>
+                    <input type='number' name='id' id='id'>
+                </label>
+            </div>
+
+
+            <div class='form-row'>
+                <label>
+                    <span>Full name</span>
+                    <input type='text' name='name' id='nameid'>
+                </label>
+            </div>
+            <div class='form-row'>
+                <label>
+                    <span>Mobile</span>
+                    <input type='text' name='mobile' id='mobileid'>
+                </label>
+            </div>
+
+            <div class='form-row'>
+                <label>
+                    <span>Email</span>
+                    <input type='email' name='email' id='emailid'>
+                </label>
+            </div>
+
+            <div class='form-row' id='changepass'>
+            </div>
+			
+
+            <div class='form-row'>
+                <input type='submit' value='Update Details'/>
+            </div>
+
+        </form>
+
+    </div>
+
+</body>
+<script>
+	function changepassword()
+	{
+		var str='Change Password';
+		if(str == document.getElementById('changetext').innerHTML)
+		{
+			var s='<label><span>Password</span> <input type=\'password\' name=\'password\'  > </label>';
+			document.getElementById('changepass').innerHTML=s;
+			document.getElementById('changetext').innerHTML='Don\'t Change Password';
+		}
+		else
+		{
+			var s='';
+			document.getElementById('changepass').innerHTML=s;
+			document.getElementById('changetext').innerHTML=str;			
+		}
+	}
